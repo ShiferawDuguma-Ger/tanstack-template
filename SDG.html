@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Market Place</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Ethiopic&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Noto Sans Ethiopic', sans-serif;
+      margin: 0;
+      background: #ffecd2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .frame {
+      width: 95%;
+      max-width: 1200px;
+      background: linear-gradient(to bottom, #add8e6, #ffe5b4);
+      border: 8px solid #004080;
+      border-radius: 20px;
+      padding: 1rem;
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    header {
+      text-align: center;
+      color: #004080;
+    }
+
+    .lang-switch {
+      margin: 1rem;
+    }
+
+    .lang-switch button {
+      padding: 8px 16px;
+      border: none;
+      background-color: #ff9900;
+      color: white;
+      font-weight: bold;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .social-media {
+      margin: 2rem 0;
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+      flex-wrap: wrap;
+    }
+
+    .social-media a {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background-color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    .social-media img {
+      width: 40px;
+      height: 40px;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      color: #333;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="frame">
+    <header>
+      <h1 id="title">My Market Place</h1>
+      <h2 id="description">Welcome to our marketplace that connects buyers and sellers with trusted opportunities!</h2>
+    </header>
+
+    <!-- Language Button -->
+    <div class="lang-switch">
+      <button onclick="switchLang()">🌐 Switch Language</button>
+    </div>
+
+    <!-- Social Media Section -->
+    <div class="social-media">
+      <a href="https://www.facebook.com/aabof.gov.et/" target="_blank" title="Facebook">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
+      </a>
+      <a href="https://www.tiktok.com/@lideta_subcity/video/7475418620147911942" target="_blank" title="TikTok">
+        <img src="https://cdn-icons-png.flaticon.com/512/3046/3046120.png" alt="TikTok">
+      </a>
+      <a href="https://www.youtube.com/results?search_query=addis+ababa+city" target="_blank" title="YouTube">
+        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube">
+      </a>
+      <a href="https://www.instagram.com/p/C6OX659Iox3/?img_index=1" target="_blank" title="Instagram">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+      </a>
+      <a href="https://t.me/AACABOFP" target="_blank" title="Telegram">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram">
+      </a>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <p id="creator">Created by Shiferaw • © 2025</p>
+      <p id="privacy">Your privacy and security are our priorities.</p>
+    </div>
+  </div>
+
+  <script>
+    const langs = ['en', 'am', 'om'];
+    let langIndex = 0;
+
+    const translations = {
+      en: {
+        title: "My Market Place",
+        description: "Welcome to our marketplace that connects buyers and sellers with trusted opportunities!",
+        creator: "Created by Shiferaw • © 2025",
+        privacy: "Your privacy and security are our priorities."
+      },
+      am: {
+        title: "የኔ የገበያ ቦታ",
+        description: "ገበሬዎችንና ገዢዎችን በታመነ መንገድ የሚያገናኙ የገበያ ቦታ!",
+        creator: "በሺፈራው የተፈጠረ • © 2025",
+        privacy: "ግላዊነትዎን እና ደህንነትዎን እናከብራለን።"
+      },
+      om: {
+        title: "Iddoo Gabaa Koo",
+        description: "Iddoo gabaa daldaltootaa fi bitattoota walitti fidu amanamaa!",
+        creator: "Kan uume Shiferaw • © 2025",
+        privacy: "Odeeffannoo fi nageenya keessan ni eegganna."
+      }
+    };
+
+    function switchLang() {
+      langIndex = (langIndex + 1) % langs.length;
+      const lang = langs[langIndex];
+      document.getElementById("title").textContent = translations[lang].title;
+      document.getElementById("description").textContent = translations[lang].description;
+      document.getElementById("creator").textContent = translations[lang].creator;
+      document.getElementById("privacy").textContent = translations[lang].privacy;
+    }
+  </script>
+</body>
+</html>
